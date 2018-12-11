@@ -1,4 +1,4 @@
-# <img alt="Kotlin" src="https://kotlinlang.org/assets/images/open-graph/kotlin_250x250.png" height="60"/> <img alt="Arrow" src="https://avatars0.githubusercontent.com/u/29458023?s=400&v=4" height="60"/> KotlinKatas [![Build Status](https://travis-ci.com/pedrovgs/KotlinKatas.svg?branch=master)](https://travis-ci.com/pedrovgs/KotlinKatas)
+# <img alt="Kotlin" src="https://kotlinlang.org/assets/images/open-graph/kotlin_250x250.png" height="60"/> <img alt="Arrow" src="https://avatars0.githubusercontent.com/u/29458023?s=400&v=4" height="50"/> KotlinKatas [![Build Status](https://travis-ci.com/pedrovgs/KotlinKatas.svg?branch=master)](https://travis-ci.com/pedrovgs/KotlinKatas)
 
 Kotlin training repository used to learn Kotlin and Functional Programming by solving some common katas using just purely functional programming with [Arrow](https://github.com/arrow-kt/arrow).
 
