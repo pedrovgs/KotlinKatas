@@ -19,6 +19,7 @@ def arrow_version = "0.8.1"
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
     compile "io.arrow-kt:arrow-core:$arrow_version"
+    compile "io.arrow-kt:arrow-effects:$arrow_version"
     compile "io.arrow-kt:arrow-syntax:$arrow_version"
     compile "io.arrow-kt:arrow-typeclasses:$arrow_version"
     compile "io.arrow-kt:arrow-data:$arrow_version"
