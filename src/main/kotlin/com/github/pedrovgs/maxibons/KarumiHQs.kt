@@ -18,7 +18,7 @@ class KarumiHQs<F>(private val M: Monad<F>, private val chat: Chat<F>) {
     fun openFridge(world: World, developer: Developer): Kind<F, World> {
         return M.binding {
             val finalMaxibonsAmount = refillMaxibonsIfNeeded(developer, computeMaxibonsLeft(world, developer)).bind()
-            World(KarumiFridge(finalMaxibonsAmount))
+            World.worldMaxibonsLeft.set(world, finalMaxibonsAmount)
         }
     }
 

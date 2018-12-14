@@ -1,6 +1,7 @@
 plugins {
     id 'org.jetbrains.kotlin.jvm' version '1.3.0'
 }
+apply plugin: 'kotlin-kapt'
 
 group 'com.github.pedrovgs'
 version '1.0-SNAPSHOT'
@@ -26,6 +27,7 @@ dependencies {
     compile "io.arrow-kt:arrow-instances-core:$arrow_version"
     compile "io.arrow-kt:arrow-instances-data:$arrow_version"
     compile "io.arrow-kt:arrow-effects-instances:$arrow_version"
+    compile "io.arrow-kt:arrow-optics:$arrow_version"
     kapt    "io.arrow-kt:arrow-annotations-processor:$arrow_version"
 
     testImplementation "io.kotlintest:kotlintest-runner-junit5:3.1.11"

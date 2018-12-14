@@ -30,21 +30,21 @@ class MaxibonsSpec : StringSpec({
     }
 
     "always have more than 2 maxibons  even if they go in groups" {
-        forAll(WorldGenerator(), Gen.list(DeveloperGenerator())) { world, developers: List<Developer> ->
+        forAll(WorldGenerator(), Gen.list(DeveloperGenerator())) { world, developers ->
             val maxibonsLeft = openFridge(world, developers).karumiFridge.maxibonsLeft
             maxibonsLeft > 2
         }
     }
 
     "ask for more maxibons using the chat client if we need to refill" {
-        forAll(HungryDeveloperGenerator()) { developer: Developer ->
+        forAll(HungryDeveloperGenerator()) { developer ->
             val messageSent = openFridgeAndGetChatMessageSent(World(), developer)
             messageSent == Some("Hi there! I'm ${developer.name}. We need more maxibons")
         }
     }
 
     "not ask for more maxibons using the chat client if we don't need to refill" {
-        forAll(NotSoHungryDeveloperGenerator()) { developer: Developer ->
+        forAll(NotSoHungryDeveloperGenerator()) { developer ->
             val messageSent = openFridgeAndGetChatMessageSent(World(), developer)
             messageSent == None
         }
