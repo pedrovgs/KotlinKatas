@@ -4,9 +4,11 @@ data class Developer internal constructor(val name: String = "", private val num
     val maxibonsToGrab: Int = Math.max(0, numberOfMaxibons)
 }
 
-data class KarumiFridge(val maxibonsLeft: Int)
+data class KarumiFridge(private val numberOfMaxibons: Int = 10) {
+    val maxibonsLeft: Int = Math.min(12, Math.max(3, numberOfMaxibons))
+}
 
-data class World(val karumiFridge: KarumiFridge)
+data class World(val karumiFridge: KarumiFridge = KarumiFridge())
 
 object Karumies {
     val pedro = Developer("Pedro", 3)
