@@ -6,7 +6,7 @@ import arrow.effects.instances.io.monad.monad
 import com.github.pedrovgs.maxibons.interpreters.SlackModule
 import io.kotlintest.specs.StringSpec
 
-class KarumiHQsSpec: StringSpec({
+class KarumiHQsSpec : StringSpec({
 
     "always have more than 2 maxibons" {
         val karumiHQs = KarumiHQs(IO.monad(), SlackModule())
@@ -15,5 +15,4 @@ class KarumiHQsSpec: StringSpec({
                 .fix().unsafeRunSync()
         println("Execution result $finalWorld")
     }
-
 })
