@@ -7,11 +7,11 @@ Kotlin training repository used to learn Kotlin and Functional Programming by so
 
 | # | Kata Statement |
 |---|----------------|
-| 1 | [Maxibons](https://github.com/Karumi/MaxibonKataJava#-kata-maxibon-for-java-) | [https://github.com/Karumi/KotlinKatas/pull/1](https://github.com/Karumi/ScalaKatas/pull/1) |
+| 1 | [Maxibons](https://github.com/Karumi/MaxibonKataJava#-kata-maxibon-for-java-) | [https://github.com/Karumi/KotlinKatas/pull/1](https://github.com/Karumi/KotlinKatas/pull/1) |
 
 ### Executing tests:
 
-This project contains some tests written using [ScalaTest](http://www.scalatest.org/) and [ScalaCheck](https://www.scalacheck.org/). You can easily run the tests by executing any of the following commands:
+This project contains some tests written using [KotlinTest](https://github.com/kotlintest/kotlintest). You can easily run the tests by executing any of the following commands:
 
 ```
 ./gradlew test // Runs every test in your project
