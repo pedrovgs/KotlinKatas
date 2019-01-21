@@ -16,8 +16,8 @@ class KarumiHQs<F>(private val M: Monad<F>, private val chat: Chat<F>) {
             developers.foldM(M, world, this::openFridge)
 
     fun openFridge(world: World, developer: Developer): Kind<F, World> = M.binding {
-      val finalMaxibonsAmount = refillMaxibonsIfNeeded(developer, computeMaxibonsLeft(world, developer)).bind()
-      World.worldMaxibonsLeft.set(world, finalMaxibonsAmount)
+        val finalMaxibonsAmount = refillMaxibonsIfNeeded(developer, computeMaxibonsLeft(world, developer)).bind()
+        World.worldMaxibonsLeft.set(world, finalMaxibonsAmount)
     }
 
     private fun computeMaxibonsLeft(world: World, developer: Developer): Int =
@@ -25,12 +25,12 @@ class KarumiHQs<F>(private val M: Monad<F>, private val chat: Chat<F>) {
 
     private fun refillMaxibonsIfNeeded(developer: Developer, maxibonsLeft: Int): Kind<F, Int> =
         if (shouldRefillMaxibons(maxibonsLeft)) {
-          M.binding {
-            askTheTeamForMoreMaxibons(developer).bind()
-            maxibonsLeft + maxibonsToRefill
-          }
+            M.binding {
+                askTheTeamForMoreMaxibons(developer).bind()
+                maxibonsLeft + maxibonsToRefill
+            }
         } else {
-          M.just(maxibonsLeft)
+            M.just(maxibonsLeft)
         }
 
     private fun shouldRefillMaxibons(maxibonsLeft: Int) = maxibonsLeft <= minNumberOfMaxibons
