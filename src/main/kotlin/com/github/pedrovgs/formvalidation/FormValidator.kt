@@ -15,15 +15,15 @@ typealias FormValidationResult<T> = ValidatedNel<FormError, T>
 object FormValidator {
 
     fun validateForm(referenceDate: LocalDateTime, form: Form): FormValidationResult<Form> =
-            Validated.applicative(NonEmptyList.semigroup<FormError>()).tupled(
+            Validated.applicative(NonEmptyList.semigroup<FormError>()).map(
                     validateFirstName(form.firstName),
                     validateLastName(form.lastName),
                     validateBirthday(referenceDate, form.birthday),
                     validateDocumentId(form.documentId),
                     validatePhoneNumber(form.phoneNumber),
-                    validateEmail(form.email)).fix().map {
+                    validateEmail(form.email)) {
                 Form(it.a, it.b, it.c, it.d, it.e, it.f)
-            }
+            }.fix()
 
     private fun validateFirstName(firstName: String): FormValidationResult<String> =
             if (firstName.trim().isNotEmpty()) {
