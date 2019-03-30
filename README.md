@@ -8,7 +8,7 @@ Kotlin training repository used to learn Kotlin and Functional Programming by so
 | # | Kata Statement | Topic |
 |---|----------------|-------|
 | 1 | [Maxibons](https://github.com/Karumi/MaxibonKataJava#-kata-maxibon-for-java-) | [https://github.com/Karumi/KotlinKatas/pull/1](https://github.com/Karumi/KotlinKatas/pull/1) | Polymorphic programming |
-| 2 | [Form validation](https://gist.github.com/pedrovgs/d83fe1f096928715a6f31946e557995a) | [https://github.com/Karumi/KotlinKatas/pull/1](https://github.com/Karumi/KotlinKatas/pull/3) | Validated data type|
+| 2 | [Form validation](https://gist.github.com/pedrovgs/d83fe1f096928715a6f31946e557995a) | [https://github.com/Karumi/KotlinKatas/pull/1](https://github.com/Karumi/KotlinKatas/pull/4) | Validated data type|
 
 ### Executing tests:
 
