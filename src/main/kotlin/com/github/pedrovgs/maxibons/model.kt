@@ -13,7 +13,7 @@ data class KarumiFridge(private val numberOfMaxibons: Int = 10) {
     companion object {
         val maxibonsLeft: Lens<KarumiFridge, Int> = Lens(
                 get = { fridge -> fridge.maxibonsLeft },
-                set = { value -> { fridge -> fridge.copy(numberOfMaxibons = value) } }
+                set = { fridge, value -> fridge.copy(numberOfMaxibons = value) }
         )
     }
 }

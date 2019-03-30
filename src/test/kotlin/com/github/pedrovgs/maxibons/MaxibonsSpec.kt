@@ -4,10 +4,10 @@ import arrow.core.Id
 import arrow.core.None
 import arrow.core.Option
 import arrow.core.Some
+import arrow.core.extensions.id.monad.monad
 import arrow.effects.IO
+import arrow.effects.extensions.io.monad.monad
 import arrow.effects.fix
-import arrow.effects.instances.io.monad.monad
-import arrow.instances.id.monad.monad
 import com.github.pedrovgs.maxibons.KarumiHQs.KarumiHQs.maxibonsToRefill
 import com.github.pedrovgs.maxibons.KarumiHQs.KarumiHQs.minNumberOfMaxibons
 import com.github.pedrovgs.maxibons.Generators.DeveloperGenerator
