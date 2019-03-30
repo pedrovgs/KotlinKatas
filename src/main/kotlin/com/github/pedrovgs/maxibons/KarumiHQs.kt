@@ -1,9 +1,8 @@
 package com.github.pedrovgs.maxibons
 
 import arrow.Kind
-import arrow.instances.list.foldable.foldM
+import arrow.data.extensions.list.foldable.foldM
 import arrow.typeclasses.Monad
-import arrow.typeclasses.binding
 
 class KarumiHQs<F>(private val M: Monad<F>, private val chat: Chat<F>) {
 
