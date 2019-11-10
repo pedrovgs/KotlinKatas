@@ -1,13 +1,13 @@
 package com.github.pedrovgs.maxibons.interpreters
 
 import arrow.Kind
-import arrow.effects.ForIO
-import arrow.effects.IO
+import arrow.core.right
+import arrow.fx.typeclasses.Async
 import com.github.pedrovgs.maxibons.Chat
 
-class SlackModule : Chat<ForIO> {
-    override fun sendMessage(message: String): Kind<ForIO, String> = IO {
+class SlackModule<F>(A: Async<F>) : Chat<F>, Async<F> by A {
+    override fun sendMessage(message: String): Kind<F, String> = async { callback ->
         println(message)
-        message
+        callback(message.right())
     }
 }

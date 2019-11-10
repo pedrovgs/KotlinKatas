@@ -1,13 +1,13 @@
 package com.github.pedrovgs.formvalidation
 
-import arrow.data.Validated
-import arrow.data.NonEmptyList
-import arrow.data.ValidatedNel
-import arrow.data.invalidNel
-import arrow.data.valid
-import arrow.data.extensions.nonemptylist.semigroup.semigroup
-import arrow.data.extensions.validated.applicative.applicative
-import arrow.data.fix
+import arrow.core.ValidatedNel
+import arrow.core.Validated
+import arrow.core.NonEmptyList
+import arrow.core.fix
+import arrow.core.invalidNel
+import arrow.core.valid
+import arrow.core.extensions.nonemptylist.semigroup.semigroup
+import arrow.core.extensions.validated.applicative.applicative
 import java.time.LocalDateTime
 
 typealias FormValidationResult<T> = ValidatedNel<FormError, T>

@@ -1,17 +1,17 @@
 package com.github.pedrovgs.maxibons
 
 import arrow.Kind
-import arrow.core.ForId
 import arrow.core.Option
 import arrow.core.None
 import arrow.core.Some
-import arrow.core.Id
+import arrow.fx.ForIO
+import arrow.fx.IO
 
-class ChatMockModule : Chat<ForId> {
+class ChatMockModule : Chat<ForIO> {
 
     var messageSent: Option<String> = None
-    override fun sendMessage(message: String): Kind<ForId, String> {
+    override fun sendMessage(message: String): Kind<ForIO, String> {
         messageSent = Some(message)
-        return Id.just(message)
+        return IO.just(message)
     }
 }
