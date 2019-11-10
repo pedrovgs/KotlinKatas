@@ -1,20 +1,18 @@
 package com.github.pedrovgs.maxibons
 
-import arrow.core.Id
 import arrow.core.None
 import arrow.core.Option
 import arrow.core.Some
-import arrow.core.extensions.id.monad.monad
-import arrow.effects.IO
-import arrow.effects.extensions.io.monad.monad
-import arrow.effects.fix
+import arrow.fx.IO
+import arrow.fx.extensions.io.async.async
+import arrow.fx.extensions.io.monad.monad
+import arrow.fx.fix
 import com.github.pedrovgs.maxibons.KarumiHQs.KarumiHQs.maxibonsToRefill
 import com.github.pedrovgs.maxibons.KarumiHQs.KarumiHQs.minNumberOfMaxibons
 import com.github.pedrovgs.maxibons.Generators.DeveloperGenerator
 import com.github.pedrovgs.maxibons.Generators.HungryDeveloperGenerator
 import com.github.pedrovgs.maxibons.Generators.NotSoHungryDeveloperGenerator
 import com.github.pedrovgs.maxibons.Generators.WorldGenerator
-import com.github.pedrovgs.maxibons.interpreters.SlackModule
 import io.kotlintest.properties.Gen
 import io.kotlintest.properties.forAll
 import io.kotlintest.shouldBe
@@ -65,14 +63,15 @@ class MaxibonsSpec : StringSpec({
 })
 
 private fun openFridge(world: World, developers: List<Developer>): World {
-    val karumiHQs = KarumiHQs(IO.monad(), SlackModule())
+    val chat = ChatMockModule()
+    val karumiHQs = KarumiHQs(chat, IO.monad(), IO.async())
     return karumiHQs.openFridge(world, developers)
             .fix().unsafeRunSync()
 }
 
 private fun openFridgeAndGetChatMessageSent(world: World, developer: Developer): Option<String> {
     val chat = ChatMockModule()
-    val karumiHQs = KarumiHQs(Id.monad(), chat)
+    val karumiHQs = KarumiHQs(chat, IO.monad(), IO.async())
     karumiHQs.openFridge(world, developer)
     return chat.messageSent
 }

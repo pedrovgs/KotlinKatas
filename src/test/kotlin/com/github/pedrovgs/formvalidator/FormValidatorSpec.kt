@@ -1,7 +1,7 @@
 package com.github.pedrovgs.formvalidator
 
-import arrow.data.NonEmptyList
-import arrow.data.invalid
+import arrow.core.NonEmptyList
+import arrow.core.invalid
 import com.github.pedrovgs.formvalidation.Form
 import com.github.pedrovgs.formvalidation.FormError
 import com.github.pedrovgs.formvalidation.FormValidator
