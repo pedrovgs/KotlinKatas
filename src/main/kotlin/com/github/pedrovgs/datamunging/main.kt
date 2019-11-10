@@ -8,10 +8,10 @@ import com.github.pedrovgs.datamunging.interpreter.StdConsole
 fun main() {
     IO.fx {
         val console = StdConsole()
-        val resourcesReader = ResourcesFileReader()
-        val weatherExtractor = WeatherExtractor(resourcesReader, console)
+        val reader = CsvFileReader(ResourcesFileReader())
+        val weatherExtractor = WeatherExtractor(reader, console)
         val (weather) = weatherExtractor.findDayWithSmallestTemperature("src/resources/weather.dat")
-        val soccerExtractor = SoccerExtractor(resourcesReader, console)
+        val soccerExtractor = SoccerExtractor(reader, console)
         val (team) = soccerExtractor.findTeamWithSmallestDifferenceInForAndAgainstGoals("src/resources/football.dat")
         Pair(weather, team)
     }.unsafeRunSync()
