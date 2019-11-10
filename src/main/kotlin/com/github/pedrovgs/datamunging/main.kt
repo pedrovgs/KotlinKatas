@@ -1,13 +1,18 @@
 package com.github.pedrovgs.datamunging
 
-import arrow.fx.handleError
+import arrow.fx.IO
+import arrow.fx.extensions.fx
 import com.github.pedrovgs.datamunging.interpreter.ResourcesFileReader
 import com.github.pedrovgs.datamunging.interpreter.StdConsole
 
 fun main() {
-    val weatherExtractor = WeatherExtractor(ResourcesFileReader(), StdConsole())
-    weatherExtractor.findDayWithSmallestTemperature("src/resources/weather.dat")
-            .handleError { exception ->
-                println("Found unexpected error while trying to find the coldest day $exception")
-            }.unsafeRunSync()
+    IO.fx {
+        val console = StdConsole()
+        val resourcesReader = ResourcesFileReader()
+        val weatherExtractor = WeatherExtractor(resourcesReader, console)
+        val (weather) = weatherExtractor.findDayWithSmallestTemperature("src/resources/weather.dat")
+        val soccerExtractor = SoccerExtractor(resourcesReader, console)
+        val (team) = soccerExtractor.findTeamWithSmallestDifferenceInForAndAgainstGoals("src/resources/football.dat")
+        Pair(weather, team)
+    }.unsafeRunSync()
 }
