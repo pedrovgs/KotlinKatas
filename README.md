@@ -11,6 +11,7 @@ Kotlin training repository used to learn Kotlin and Functional Programming by so
 | 2 | [Form validation](https://gist.github.com/pedrovgs/d83fe1f096928715a6f31946e557995a) | [https://github.com/pedrovgs/KotlinKatas/pull/4](https://github.com/pedrovgs/KotlinKatas/pull/4) | Validated data type|
 | 3 | [Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life) | [https://github.com/pedrovgs/KotlinKatas/pull/6](https://github.com/pedrovgs/KotlinKatas/pull/6) | Pure functions, IO monad complex property-based testing generators|
 | 4 | [Data Munging](http://codekata.com/kata/kata04-data-munging/) | [https://github.com/pedrovgs/KotlinKatas/pull/7](https://github.com/pedrovgs/KotlinKatas/pull/7) | Effects API to simulate for-comrpehension and do-notation |
+| 5 | [Nim Game](http://codingdojo.org/kata/Nim/) | [https://github.com/pedrovgs/KotlinKatas/pull/8](https://github.com/pedrovgs/KotlinKatas/pull/8) | State monad |
 
 ### Executing tests:
 
