@@ -10,7 +10,7 @@ Kotlin training repository used to learn Kotlin and Functional Programming by so
 | 1 | [Maxibons](https://github.com/Karumi/MaxibonKataJava#-kata-maxibon-for-java-) | [https://github.com/pedrovgs/KotlinKatas/pull/1](https://github.com/pedrovgs/KotlinKatas/pull/1) | Polymorphic programming |
 | 2 | [Form validation](https://gist.github.com/pedrovgs/d83fe1f096928715a6f31946e557995a) | [https://github.com/pedrovgs/KotlinKatas/pull/4](https://github.com/pedrovgs/KotlinKatas/pull/4) | Validated data type|
 | 3 | [Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life) | [https://github.com/pedrovgs/KotlinKatas/pull/6](https://github.com/pedrovgs/KotlinKatas/pull/6) | Pure functions, IO monad complex property-based testing generators|
-| 4 | [Data Munging](http://codekata.com/kata/kata04-data-munging/) | [https://github.com/pedrovgs/KotlinKatas/pull/7](https://github.com/pedrovgs/KotlinKatas/pull/7) | |
+| 4 | [Data Munging](http://codekata.com/kata/kata04-data-munging/) | [https://github.com/pedrovgs/KotlinKatas/pull/7](https://github.com/pedrovgs/KotlinKatas/pull/7) | Effects API to simulate for-comrpehension and do-notation |
 
 ### Executing tests:
 
